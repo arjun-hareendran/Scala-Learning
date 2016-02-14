@@ -1,0 +1,25 @@
+
+//equal to check
+
+class Person(name:String)
+var person1 = new Person("Arjun");
+var person2 = new Person("Arjun");
+person1 == person2 //false
+
+
+class Person(name:String){
+override def equals(secondObject:Any): Boolean ={
+secondObject.isInstanceOf[Person] && (this.hashCode() == secondObject.asInstanceOf[Person].hashCode());
+}
+//Got to overide the hash method , so that hashing is based on name
+override def hashCode = name.hashCode()
+}
+
+var person1 = new Person("Arjun");
+var person2 = new Person("Arjun");
+person1 == person2 //true
+
+//Not for class references
+var x = 10
+var y = 10
+x == y 

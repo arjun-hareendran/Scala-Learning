@@ -1,0 +1,31 @@
+
+
+class Point(x:Int,y:Int){
+println("Started")
+override def toString():String = "The Value of x is " +x +" and the value of y is " +y ;
+}
+
+class Person(name:String,age:Int)
+var arjun = new Person("Arjun Hareendran",28)
+arjun.name
+
+class Person(var name:String,age:Int)
+var arjun = new Person("Arjun Hareendran",28)
+arjun.name
+
+class Person(var name:String, var age:Int)
+var arjun = new Person("Arjun Hareendran",28)
+arjun.name
+arjun.age
+
+arjun.name="Arjun H"
+arjun.name
+
+
+class Person(var name:String, val age:Int)
+var arjun = new Person("Arjun Hareendran",28)
+arjun.name
+arjun.age
+
+arjun.age=40
+arjun.name="Arjun H"
