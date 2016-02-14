@@ -1,0 +1,41 @@
+
+
+trait superHuman {
+  def walking() = {
+    println("Super Human Walking")
+  }
+  def say() = {
+    println("Super Human")
+  }
+}
+
+trait Human {
+  def walk() = {
+    println("Human Walking")
+  }
+  def say() = {
+    println("Human")
+  }
+}
+
+abstract class speak() {
+  def say()
+}
+
+class Person() extends speak with superHuman with Human {
+  override def say() {
+    println("Hello Darling")
+  }
+}
+
+class Person2() extends speak with superHuman {
+  override def say() {
+    println("Hello Darling")
+  }
+}
+
+val arjun = new person
+val amith = new Person2
+
+//This is an error
+val jimmy = new Person2 with Human

@@ -1,0 +1,48 @@
+
+//Created an Abstract class
+abstract class IntQueue{
+def get():Int
+def put(x:Int)
+}
+
+
+//Created an a class with method implementation for IntQueue
+import scala.collection.mutable.ArrayBuffer
+class BasicIntQueue extends IntQueue{
+private val buf = new ArrayBuffer[Int]
+def get() = {
+buf.remove(0)
+}
+
+def put(x:Int)={
+println("Inside Put of BasicIntQueue")
+println("Value is "+ x)
+buf+=x
+}
+}
+
+trait Doubling extends IntQueue{
+abstract override def put(x:Int) {
+println("Inside Trait put method")
+println("The value is " + x)
+super.put(2*x)
+println("Exiting Trait put")
+}
+}
+
+class MyQueue extends BasicIntQueue with Doubling
+
+val queue = new MyQueue
+queue.put(10)
+queue.get()
+
+
+//Junk Code - For Testing
+
+class TestClass(){
+def display() =  println("Hello")
+}
+
+val x = new TestClass()
+x.display
+
