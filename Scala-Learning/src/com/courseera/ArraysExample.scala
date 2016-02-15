@@ -48,6 +48,15 @@ object ArraysExample {
       }
     }
     
+    //String to Array
+    
+    var a = "Hello World".toArray
+    
+    for(i <- 0 to a.length){
+      println(a(i))
+    }
+    
+    
     
   }
 }
